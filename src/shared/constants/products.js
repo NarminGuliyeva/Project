@@ -58,7 +58,7 @@ export const productsData = [
     },
     {
         id : 8,
-        name : '2Bosenderfer Special Edition Baroque',
+        name : '2Bosenderfer Special Edition Baroqueeeeeeeeee',
         img : Saxophone,
         price : 1000,
     },
