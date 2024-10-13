@@ -1,7 +1,7 @@
 .products-content {
     width: 90%;
     margin: auto;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -10,7 +10,8 @@
     /* justify-items: flex-start; */
     /* justify-items: first baseline; */
     justify-items: self-start;
-    box-shadow: rgba(17, 17, 26, 0.186) 0px 1px 0px, rgba(17, 17, 26, 0.225) 0px 0px 8px;
+    border: 1px solid rgba(128, 128, 128, 0.116);
+    /* box-shadow: rgba(17, 17, 26, 0.186) 0px 1px 0px, rgba(17, 17, 26, 0.225) 0px 0px 8px; */
     padding-bottom: 140px;
 }
 .cart .products-content {
@@ -21,21 +22,32 @@
 }
 .product {
     width: 280px;
-    height: 400px;
+    height: 380px;
     margin: 30px 30px;
     background-color: white;
     position: relative;
+    /* padding: 50px; */
+    text-align: center;
+    /* padding: 30px 0; */
+    /* background-color: red; */
+    /* padding: 40px; */
+    /* margin: auto; */
 }
 .product img{
-    width: 90%;
-    margin-left: 5%;
+    width: 65%;
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    margin-top: 30px;
+    /* margin-left: 10%; */
+    /* margin-left: 5%; */
 }
 .product .products-buttons {
     width: 66%;
     height: 60px;
     display: flex;
     justify-content: space-between;
-    top: 62%;
+    top: 55%;
     z-index: 45;
     overflow: hidden;
 }
@@ -88,18 +100,25 @@
     position: absolute;
 }
 .product:hover .product-hover{
-    background-color: rgba(0, 0, 0, 0.59);
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    /* box-shadow: rgba(17, 17, 26, 0.186) 0px 1px 0px, rgba(17, 17, 26, 0.225) 0px 0px 8px; */
+    /* background-color: rgba(180, 180, 180, 0.404); */
     transition: 1s;
 }
 .product:hover .name-price h1{
-    color: white;
+    /* color: white; */
     transition: 1s;
 }
 .name-price {
-    width: 100%;
+    /* width: 100%; */
     margin: auto;
+    height: 30%;
+    /* margin-top: 20%; */
+    /* top: 30px; */
+    /* background-color: red !important; */
+    /* border: 1px solid red; */
+    padding: 0px 20px;
     text-align: center;
-    background-color: red;
 }
 .name-price h1{
     font-size: 20px;

@@ -1,7 +1,7 @@
 .categories {
     width: 95%;
-    height: 270px;
-    margin: 100px auto 0px;
+    height: 240px;
+    margin: 20px auto 0px;
 }
 .categories ul {
     width: 100%;
@@ -14,6 +14,7 @@
 .categories li{
     list-style: none;
     text-align: center;
+    cursor: pointer;
 }
 .cat-common li{
     width: 13% !important;

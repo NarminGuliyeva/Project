@@ -7,6 +7,9 @@ const Navbar = ({ onHover, isHover }) => {
     return (
         <nav className={styles.menu} onMouseEnter={() => onHover(true)}
             onMouseLeave={() => onHover(false)}>
+            <div className={styles.logo} style={{}}>
+                <h1>{isHover ? "MusicStore" : "M"}</h1>
+            </div>
             <div className={styles.pianoMenuHover}>
                 <div className={styles.iconBar}>
                     <div className={`${styles.lineBar} ${styles.topBar}`}></div>
