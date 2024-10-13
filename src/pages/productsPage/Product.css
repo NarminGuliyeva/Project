@@ -1,0 +1,207 @@
+.products-content {
+    width: 90%;
+    margin: auto;
+    margin-top: 40px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content:space-between;
+    /* justify-items: flex-start; */
+    /* justify-items: first baseline; */
+    justify-items: self-start;
+    box-shadow: rgba(17, 17, 26, 0.186) 0px 1px 0px, rgba(17, 17, 26, 0.225) 0px 0px 8px;
+    padding-bottom: 140px;
+}
+.cart .products-content {
+    margin-top: 120px;
+}
+.favorites .products-content {
+    margin-top: 120px;
+}
+.product {
+    width: 280px;
+    height: 400px;
+    margin: 30px 30px;
+    background-color: white;
+    position: relative;
+}
+.product img{
+    width: 90%;
+    margin-left: 5%;
+}
+.product .products-buttons {
+    width: 66%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    top: 62%;
+    z-index: 45;
+    overflow: hidden;
+}
+.product .products-buttons .btn-product{
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.797);
+    border-radius: 0.1cm;
+    border: none;
+    font-size: 20px;
+    position: absolute;
+    top: 20%;
+    z-index: 10;
+    color: white;
+}
+.products-buttons a{
+    color: white !important;
+}
+.products-buttons .more {
+    width: 80px !important;
+    z-index: 15 !important;
+}
+.products-buttons .add-favorite{
+    left: 30%; 
+}
+.products-buttons .add-basket{
+    right: 30%;
+}
+@keyframes buttons1 {
+    from{left: 30%;}
+    to{left: 0%;}
+}
+@keyframes buttons2 {
+    from{right: 30%;}
+    to{right: 0%;}
+}
+.product:hover .add-basket{
+    animation-name: buttons2;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.product:hover .add-favorite{
+    animation-name: buttons1;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+.product-hover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.product:hover .product-hover{
+    background-color: rgba(0, 0, 0, 0.59);
+    transition: 1s;
+}
+.product:hover .name-price h1{
+    color: white;
+    transition: 1s;
+}
+.name-price {
+    width: 100%;
+    margin: auto;
+    text-align: center;
+    background-color: red;
+}
+.name-price h1{
+    font-size: 20px;
+    margin-top: 60px;
+    position: absolute;
+    font-weight: 600;
+}
+.name-price .product-price{
+    font-size: 18px;
+    bottom: 4%;
+    font-weight: 400;
+}
+
+.h1 {
+    width: 80%;
+    margin: auto;
+    font-size: 25px;
+}
+.add-new {
+    width: 40%;
+    height: 200px;
+    margin: auto;
+}
+.add-new input {
+    width: 80%;
+    height: 40px;
+    margin-top: 20px;
+    margin-left: 10%;
+}
+.add-new .btn {
+    width: 30%;
+    height: 30px;
+    margin-top: 20px;
+    margin-left: 35%;
+}
+
+.section-more {
+    width: 100%;
+    margin-top: 150px;
+    display: flex;
+}
+.product-details {
+    width: 43%;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-left: 4%;
+}
+.product-images {
+    width: 47%;
+    display: flex;
+    justify-content: space-between;
+}
+.big-img-content{
+    width: 78%;
+}
+.big-img-content img{
+    filter: drop-shadow(20px 20px 8px rgba(128, 128, 128, 0.495));
+}
+.section-more img {
+    width: 92%;
+    transition: 1s;
+}
+.small-images {
+    width: 25%;
+}
+.small-img-content {
+    width: 100%;
+    opacity: 0.6;
+    transition: 1s;
+}
+.small-img-content:hover{
+    opacity: 1;
+}
+
+.product-details .product-name {
+    font-size: 50px;
+    margin: 0px 0px 40px;
+}
+.product-details .product-price{
+    font-size: 40px;
+}
+.btn-add {
+    width: 180px;
+    height: 48px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 22px;
+    background-color: black;
+    color: white;
+    margin: 45px 0px 30px;
+}
+.btn-add a{
+    color: white;
+}
+.btn-add-favorite{
+    width: 50px;
+    margin-left: 16px;
+}
+.product-details .txt-product{
+    font-size: 25px;
+    margin: 7px 0px;
+}
+.about-product {
+    font-size: 30px;
+    font-weight: 900;
+    margin: 15px 0px 30px;
+}

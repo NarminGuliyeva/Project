@@ -1,0 +1,10 @@
+.common {
+    width: 95%;
+    /* height: 100vh; */
+    margin-left: 5%;
+    transition: 1s;
+}
+.narrow {
+    width: 80% !important;
+    margin-left: 20%;
+}
