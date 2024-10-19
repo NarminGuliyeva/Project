@@ -1,0 +1,97 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe"
+    },
+    {
+      "id": 2,
+      "name": "Jane Doe"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "Bosenderfer Special Edition Baroque",
+      "img": "src/assets/images/royal_1500-400x400.png",
+      "price": 15000,
+      "catId": 1
+    },
+    {
+      "id": "2",
+      "name": "'Bosenderfer Special Edition Baroque'",
+      "img": "src/assets/images/instrumentsImg/kamancha.png",
+      "price": 1000,
+      "catId": 13
+    },
+    {
+      "id": "3",
+      "name": "'Bosenderfer Special Edition Baroque'",
+      "img": "src/assets/images/instrumentsImg/drum.png",
+      "price": 10000,
+      "catId": 11
+    },
+    {
+      "id": "4",
+      "name": "'4Bosenderfer Special Edition Baroque'",
+      "img": "src/assets/images/instrumentsImg/violin.png",
+      "price": 12000,
+      "catId": 6
+    },
+    {
+      "id": "5",
+      "name": "'5Bosenderfer Special Edition Baroque'",
+      "img": "src/assets/images/instrumentsImg/cornet.png",
+      "price": 12000,
+      "catId": 10
+    },
+    {
+      "id": "6",
+      "name": "'Bosenderfer Special Edition Baroque'",
+      "img": "src/assets/images/instrumentsImg/gitara.png",
+      "price": 12000,
+      "catId": 5
+    },
+    {
+      "id": "7",
+      "name": "'2Bosenderfer Special Edition Baroque'",
+      "img": "src/assets/images/instrumentsImg/piano.png",
+      "price": 1000,
+      "catId": 2
+    },
+    {
+      "id": "8",
+      "name": "'2Bosenderfer Special Edition Baroque'",
+      "img": "src/assets/images/instrumentsImg/tar.png",
+      "price": 1000,
+      "catId": 12
+    },
+    {
+      "id": "9",
+      "name": "'2Bosenderfer Special Edition Baroqueeeeeeeeee'",
+      "img": "src/assets/images/instrumentsImg/saxophone.png",
+      "price": 1000,
+      "catId": 9
+    },
+    {
+      "id": "10",
+      "name": "Upright piano P 125 G1",
+      "img": "src/assets/images/G1_1.png",
+      "price": 13000,
+      "catId": 1,
+      "brand": "Petrof",
+      "size": "1250 x 1463 x 590",
+      "weight": 239,
+      "country": "Çexiya"
+    }
+  ],
+  "favouritesProducts": [
+    {
+      "id": "3",
+      "name": "'Bosenderfer Special Edition Baroque'",
+      "img": "src/assets/images/instrumentsImg/drum.png",
+      "price": 10000,
+      "catId": 11
+    }
+  ]
+}

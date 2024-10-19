@@ -12,6 +12,7 @@
     flex-wrap: wrap;
 }
 .categories li{
+    /* background-color: red; */
     list-style: none;
     text-align: center;
     cursor: pointer;
@@ -45,19 +46,21 @@
     display: flex;
     align-items: center;
     margin-left: 20px;
+    font-size: 18px;
 }
 .alt-cat li a{
     font-size: 18px !important;
 }
 .alt-cat li:hover a{
-    transition: 0.3s;
-    margin-left: 10px;
     color: white !important;
+    transition: 0.3s;
 }
 .alt-cat li:hover {
+    padding-left: 10px;
     transition: 0.3s;
     background-color: black;
     border-radius: 0.1cm;
+    color: white;
 }
 .categories .img-cat{
     width: 85%;

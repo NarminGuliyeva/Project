@@ -10,7 +10,8 @@ export const categoriesData = [
         id: 1,
         name: 'Hamısı',
         img: Mix,
-        code: 'all'
+        code: 'all',
+        catId: "All",
     },
     {
         id: 2,
@@ -18,16 +19,20 @@ export const categoriesData = [
         img: Piano,
         code: 'keyboard',
         altCat: [{
+            catId: 1,
             name: "Akustik royal/piano",
             code: "acusticPiano"
         },
         {
+            catId: 2,
             name: "Elektron royal/piano",
             code: "acusticPiano"
-        },
-        {
-            name: "Aksesuarlar",
-            code: "acusticPiano"
+        // }
+        // ,
+        // {
+        //     catId: 3,
+        //     name: "Aksesuarlar",
+        //     code: "acusticPiano"
         }]
     },
     {
@@ -36,14 +41,17 @@ export const categoriesData = [
         img: Simli,
         code: 'guitar',
         altCat: [{
+            catId: 4,
             name: "Klassik gitara",
             code: "acusticPiano"
         },
         {
+            catId: 5,
             name: "Elektron gitara",
             code: "acusticPiano"
         },
         {
+            catId: 6,
             name: "Skripkalar",
             code: "acusticPiano"
         }]
@@ -54,18 +62,22 @@ export const categoriesData = [
         img: Nefes,
         code: 'nefes',
         altCat: [{
+            catId: 7,
             name: "Fleytalar",
             code: "acusticPiano"
         },
         {
+            catId: 8,
             name: "Klarnet",
             code: "acusticPiano"
         },
         {
+            catId: 9,
             name: "Saksafon",
             code: "acusticPiano"
         },
         {
+            catId: 10,
             name: "Trumped",
             code: "acusticPiano"
         }]
@@ -75,6 +87,7 @@ export const categoriesData = [
         name: 'Zərb alətləri',
         img: Zerb,
         code: 'zerb',
+        catId: 11
         // altCat: [{
         //     name: "Akustik",
         //     code: "acusticPiano"
@@ -90,18 +103,22 @@ export const categoriesData = [
         img: Tar,
         code: 'xalq',
         altCat: [{
+            catId: 12,
             name: "Tar",
             code: "acusticPiano"
         },
         {
+            catId: 13,
             name: "Kamança",
             code: "acusticPiano"
         },
         {
+            catId: 14,
             name: "Nağara",
             code: "acusticPiano"
         },
         {
+            catId: 15,
             name: "Qarmon",
             code: "acusticPiano"
         }]

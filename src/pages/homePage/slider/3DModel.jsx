@@ -69,7 +69,7 @@ const ThreeDModel = () => {
         });
 
         tl.to('.myCanvas', {
-            x: '50vw',
+            x: '45vw',
             // height: "900px",
             ease: "power1.inOut",
             // scale: 1.5,

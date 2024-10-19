@@ -1,0 +1,144 @@
+.common-area {
+    width: 70%;
+    height: 75vh;
+    position: relative;
+    top: 120px;
+    border-radius: 0.3cm;
+}
+.area {
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    border-radius: 0.3cm;
+}
+.black-area {
+    z-index: 30;
+    background-color: black;
+    left: 20%;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    border: 1px solid white;
+}
+.white-area{
+    z-index: 25;
+    background-color: white;
+    animation-fill-mode: forwards;
+    animation-duration: 1s;
+    /* border: 1px solid black; */
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    left: 0%;
+}
+
+.animate-signup {
+    animation-name: animas;
+}
+
+.animate-signin {
+    animation-name: animas1;
+}
+@keyframes animas {
+    0%{left: 20%; z-index: 30;}
+    25%{left: 35%; z-index: 42;}
+    100%{left: 20%; z-index: 42;}
+}
+@keyframes animas1 {
+    0%{left: 0%; z-index: 25;}
+    50%{left: -15%; z-index: 40;}
+    100%{left: 0%; z-index: 40;}
+}
+.section-sign {
+    width: 48%;
+    border: 2px solid black;
+    position: absolute;
+    transition: 1s;
+}
+.section-signin {
+    background-color: white;
+    height: 350px;
+    top: 18%;
+    /* top: 50%;
+    transform: translateY(-50%); */
+    z-index: 50;
+    animation-duration: 1s;
+    transition: 1s;
+    animation-fill-mode: forwards;
+}
+.section-signup{
+    height: 430px;
+    top: 12%;
+    background-color: black;
+    transition: 1s;
+}
+.form-group {
+    width: 80%;
+    height: 90px;
+    position: relative;
+    top: 60px;
+    margin-left: 10%;
+}
+.inp {
+    width: 100%;
+    height: 40px;
+    padding-left: 10px;
+}
+.section-signup .inp {
+    background-color: black;
+    border: 1px solid white;
+    color: white;
+}
+.section-signup .btn{
+    background-color: white;
+    color: black;
+}
+.btn {
+    width: 200px;
+    height: 40px;
+    margin-top: 50px;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+}
+.label {
+    font-size: 18px;
+    position: absolute;
+    /* left: 70px; */
+    left: 10px;
+    top: 12px;
+    transition: 0.5s;
+    letter-spacing: 3px;
+    pointer-events: none;
+}
+.inp:focus~.label{
+    height: 23px;
+    padding: 4px 10px;
+    background-color: black;
+    border-top-right-radius: 0.1cm;
+    border-bottom-right-radius: 0.1cm;
+    color: white;
+    font-size: 18px;
+    top: -10px;
+    /* left: 48px; */
+    text-align: center;
+    letter-spacing: 6px;
+}
+.section-signup .label {
+    color: white;
+}
+.section-signup .inp:focus ~.label{
+    background-color: white;
+    color: black;
+}
+
+.section-signup .active-label {
+    color: white !important;
+}
+.txt-sign {
+    bottom: 7%;
+    font-size: 18px;
+}
+.txt-signup {
+    color: white;
+}
+.txt-signup a{
+    color: white;
+}

@@ -6,6 +6,8 @@ import ContactPage from './pages/contactPage/ContactPage'
 import FavoritesPage from './pages/favoritesPage/FavoritesPage'
 import BasketPage from './pages/basketPage/BasketPage'
 import Layout from './widgets/layouts/Layout'
+import ProductDetailPage from './pages/productDetailPage/ProductDetailPage'
+import LoginPage from './pages/loginPage/LoginPage'
 
 const ConfigureRoutes = () => {
     return (
@@ -16,7 +18,9 @@ const ConfigureRoutes = () => {
                 <Route path="/contact" element={<ContactPage />} />
                 <Route path="/favorites" element={<FavoritesPage />} />
                 <Route path="/basket" element={<BasketPage />} />
+                <Route path="/product/:id" element={<ProductDetailPage />} />
             </Route>
+            <Route path="/login" element={<LoginPage />} />
         </Routes>
     )
 }

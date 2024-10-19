@@ -111,3 +111,27 @@ nav:hover .white{
     background-color: white;
     color: black;
 }
+.loginBtn {
+    position: absolute;
+    bottom: 10px;
+    width: 60%;
+    /* width: 100px; */
+    left: 45%;
+    transform: translateX(-50%);
+    /* width: 100px; */
+    height: 40px;
+    /* background-color: black; */
+    color: white;
+}
+.loginBtn2 {
+    position: absolute;
+    /* bottom: 10px; */
+    width: 60%;
+    width: 60px;
+    left: 45%;
+    transform: translateX(-50%);
+    /* width: 100px; */
+    height: 40px;
+    background-color: black;
+    color: white;
+}
