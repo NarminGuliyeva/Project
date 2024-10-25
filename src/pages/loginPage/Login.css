@@ -133,12 +133,21 @@
     color: white !important;
 }
 .txt-sign {
+    width: 56%;
+    /* background-color: red; */
     bottom: 7%;
+    display: flex;
+    justify-content: space-between;
     font-size: 18px;
+}
+.txt-sign button {
+    background-color: transparent;
+    border: none;
+    /* margin-left: 30px; */
 }
 .txt-signup {
     color: white;
 }
-.txt-signup a{
+.txt-signup button{
     color: white;
 }
