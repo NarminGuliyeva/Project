@@ -6,6 +6,7 @@ const productsSlice = createSlice({
     initialState: {
         products: [],
         favProducts: [],
+        basket: [],
         choosenCategory: getLocalStorage("cat") || 1
     },
     reducers: {
@@ -23,19 +24,31 @@ const productsSlice = createSlice({
             state.favProducts =  [...state.favProducts, action.payload];
         },
         removeFavProduct: (state, action) => {
-            debugger
             state.favProducts = state.favProducts.filter(product => product.id !== action.payload.id);
-            // state.favProducts.find(product => product.id  !== action.payload.id);
         },
         resetAllFav: (state, action) => {
             state.favProducts = [];
+        },
+        setBasketProducts: (state, action) => {
+            state.basket = action.payload;
+        },
+        addBasketProduct: (state, action) => {
+            state.basket =  [...state.basket, action.payload];
+        },
+        removeBasketProduct: (state, action) => {
+            state.basket = state.basket.filter(product => product.id !== action.payload.id);
+        },
+        resetAllBasket: (state, action) => {
+            state.basket = [];
         }
     }
 })
 export const {addProductsData, 
     setChooseCategory, addFavProduct,  
     removeFavProduct, setFavProducts,
-    resetAllFav
+    resetAllFav, addBasketProduct,  
+    removeBasketProduct, setBasketProducts,
+    resetAllBasket
 } = productsSlice.actions;
 
 export default productsSlice.reducer    

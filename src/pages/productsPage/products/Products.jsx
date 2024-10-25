@@ -6,10 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addProductsData } from '../../../store/productsSlice'
 
 const Products = ({...props}) => {
-    const {filteredData} = props;
-    // const  [products, setProducts] = useState([])
-   
-    
+    const {filteredData} = props;   
     
     return (
         <div className="products-content">

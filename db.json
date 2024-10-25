@@ -192,5 +192,31 @@
       },
       "userId": "eacf"
     }
+  ],
+  "basket": [
+    {
+      "product": {
+        "id": "1",
+        "name": "Bosenderfer Special Edition Baroque",
+        "img": "src/assets/images/royal_1500-400x400.png",
+        "price": 15000,
+        "catId": 1
+      },
+      "count": 2,
+      "userId": "02a0",
+      "id": "a754"
+    },
+    {
+      "id": "ee4e",
+      "product": {
+        "id": "2",
+        "name": "'Bosenderfer Special Edition Baroque'",
+        "img": "src/assets/images/instrumentsImg/kamancha.png",
+        "price": 1000,
+        "catId": 13
+      },
+      "count": 1,
+      "userId": "02a0"
+    }
   ]
 }

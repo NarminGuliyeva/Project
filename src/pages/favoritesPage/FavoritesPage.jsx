@@ -5,12 +5,22 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setFavProducts } from '../../store/productsSlice'
 import { getLocalStorage } from '../../utils/localStorage'
 import Product from '../productsPage/products/Product'
+import { useNavigate } from 'react-router-dom'
 
 const FavoritesPage = () => {
-  const favProducts = useSelector(state => state.products.favProducts);
-
   const dispatch = useDispatch()
+  const navigate = useNavigate()
+  const favProducts = useSelector(state => state.products.favProducts);
   const username = getLocalStorage("username")
+
+  useEffect(() => {
+    if (username) {
+      handleGetFavProducts()
+    }
+    else {
+      navigate("/login")
+    }
+  }, [])
 
   const handleGetFavProducts = async () => {
     if (username) {
@@ -18,16 +28,13 @@ const FavoritesPage = () => {
         const response = await fetch('http://localhost:5000/favouritesProducts');
         const data = await response.json();
         const filteredData = data.filter((d) => d.userId === username.id)
-        console.log(filteredData);
         dispatch(setFavProducts(filteredData));
       } catch (error) {
         console.error(error);
       }
     }
   };
-  useEffect(() => {
-    handleGetFavProducts()
-  }, [])
+
   return (
     <div className={styles.favoritesPage}>
       <div className="products-content">
