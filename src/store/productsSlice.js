@@ -32,6 +32,10 @@ const productsSlice = createSlice({
         }
     }
 })
-export const {addProductsData, setChooseCategory, addFavProduct,  removeFavProduct, setFavProducts} = productsSlice.actions;
+export const {addProductsData, 
+    setChooseCategory, addFavProduct,  
+    removeFavProduct, setFavProducts,
+    resetAllFav
+} = productsSlice.actions;
 
 export default productsSlice.reducer    

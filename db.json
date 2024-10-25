@@ -1,12 +1,19 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "John Doe"
+      "id": "3a2f",
+      "username": "admin",
+      "password": "admin"
     },
     {
-      "id": 2,
-      "name": "Jane Doe"
+      "id": "02a0",
+      "username": "Narmin13",
+      "password": "narmin"
+    },
+    {
+      "id": "eacf",
+      "username": "Narmin1",
+      "password": "narmin"
     }
   ],
   "products": [
@@ -87,11 +94,103 @@
   ],
   "favouritesProducts": [
     {
-      "id": "3",
-      "name": "'Bosenderfer Special Edition Baroque'",
-      "img": "src/assets/images/instrumentsImg/drum.png",
-      "price": 10000,
-      "catId": 11
+      "id": "38bb",
+      "product": {
+        "id": "1",
+        "name": "Bosenderfer Special Edition Baroque",
+        "img": "src/assets/images/royal_1500-400x400.png",
+        "price": 15000,
+        "catId": 1
+      },
+      "userId": "02a0"
+    },
+    {
+      "id": "f837",
+      "product": {
+        "id": "2",
+        "name": "'Bosenderfer Special Edition Baroque'",
+        "img": "src/assets/images/instrumentsImg/kamancha.png",
+        "price": 1000,
+        "catId": 13
+      },
+      "userId": "02a0"
+    },
+    {
+      "id": "63e7",
+      "product": {
+        "id": "7",
+        "name": "'2Bosenderfer Special Edition Baroque'",
+        "img": "src/assets/images/instrumentsImg/piano.png",
+        "price": 1000,
+        "catId": 2
+      },
+      "userId": "02a0"
+    },
+    {
+      "id": "c872",
+      "product": {
+        "id": "1",
+        "name": "Bosenderfer Special Edition Baroque",
+        "img": "src/assets/images/royal_1500-400x400.png",
+        "price": 15000,
+        "catId": 1
+      },
+      "userId": "eacf"
+    },
+    {
+      "id": "a8cd",
+      "product": {
+        "id": "2",
+        "name": "'Bosenderfer Special Edition Baroque'",
+        "img": "src/assets/images/instrumentsImg/kamancha.png",
+        "price": 1000,
+        "catId": 13
+      },
+      "userId": "eacf"
+    },
+    {
+      "id": "a60d",
+      "product": {
+        "id": "3",
+        "name": "'Bosenderfer Special Edition Baroque'",
+        "img": "src/assets/images/instrumentsImg/drum.png",
+        "price": 10000,
+        "catId": 11
+      },
+      "userId": "eacf"
+    },
+    {
+      "id": "f545",
+      "product": {
+        "id": "4",
+        "name": "'4Bosenderfer Special Edition Baroque'",
+        "img": "src/assets/images/instrumentsImg/violin.png",
+        "price": 12000,
+        "catId": 6
+      },
+      "userId": "eacf"
+    },
+    {
+      "id": "79a5",
+      "product": {
+        "id": "8",
+        "name": "'2Bosenderfer Special Edition Baroque'",
+        "img": "src/assets/images/instrumentsImg/tar.png",
+        "price": 1000,
+        "catId": 12
+      },
+      "userId": "eacf"
+    },
+    {
+      "id": "c8b2",
+      "product": {
+        "id": "7",
+        "name": "'2Bosenderfer Special Edition Baroque'",
+        "img": "src/assets/images/instrumentsImg/piano.png",
+        "price": 1000,
+        "catId": 2
+      },
+      "userId": "eacf"
     }
   ]
 }

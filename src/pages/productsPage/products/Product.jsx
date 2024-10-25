@@ -1,61 +1,80 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import '../Product.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { addFavProduct, removeFavProduct, setFavProducts } from '../../../store/productsSlice'
+import { getLocalStorage } from '../../../utils/localStorage'
 
 const Product = ({ product }) => {
     const dispatch = useDispatch();
     const favProducts = useSelector(state => state.products.favProducts);
+    console.log(favProducts);
+    
+    const navigate = useNavigate()
+
 
     const isFavorited = (productId) => {
-        return favProducts.some((fav) => fav.id === productId);
+        return favProducts.some((fav) => fav.product.id === productId);
     }
 
+    const username = getLocalStorage("username")
+
     const handleAddFav = async (product) => {
-        debugger
-        const isAlreadyFavorited = isFavorited(product.id);
-        if (!isAlreadyFavorited) {
-            try {
-                const response = await fetch('http://localhost:5000/favouritesProducts', {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(product)
-                })
-                const data = await response.json()
-                dispatch(addFavProduct(product))
+        if (username) {
+            const chosenProduct = favProducts.find(p => p.product.id === product.id)
+            const isAlreadyFavorited = isFavorited(product.id);
+            if (!isAlreadyFavorited) {
+                try {
+                    const response = await fetch('http://localhost:5000/favouritesProducts', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ product, userId: username.id })
+                    })
+                    const data = await response.json()
+                    console.log(data);
+                    
+                    dispatch(addFavProduct(data))
+                }
+                catch (e) { console.error(e) }
             }
-            catch (e) { console.error(e) }
+            else {
+                // debugger
+                try {
+                    const response = await fetch(`http://localhost:5000/favouritesProducts/${chosenProduct.id}`, {
+                        method: "DELETE"
+                    });
+                    if (response.ok) {
+                        dispatch(removeFavProduct(chosenProduct));
+                    }
+                } catch (error) {
+                    console.error(error);
+                }
+            }
         }
         else {
-            try {
-                const response = await fetch(`http://localhost:5000/favouritesProducts/${product.id}`, {
-                    method: "DELETE"
-                });
-                if (response.ok) {
-                    dispatch(removeFavProduct(product));
-                }
-            } catch (error) {
-                console.error(error);
-            }
+            navigate("/login")
         }
     }
 
     const handleGetFavProducts = async () => {
-        try {
-            const response = await fetch('http://localhost:5000/favouritesProducts');
-            const data = await response.json();
-            dispatch(setFavProducts(data));
-        } catch (error) {
-            console.error(error);
+        if (username) {
+            try {
+                const response = await fetch('http://localhost:5000/favouritesProducts');
+                const data = await response.json();
+                const filteredData = data.filter((d) => d.userId === username.id)
+                console.log(filteredData);
+                dispatch(setFavProducts(filteredData));
+            } catch (error) {
+                console.error(error);
+            }
         }
     };
 
     useEffect(() => {
         handleGetFavProducts()
-      },[])
+    }, [])
     return (
         <div className="product">
             {/* <div className="product-hover"> </div> */}

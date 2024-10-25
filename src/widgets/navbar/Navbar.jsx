@@ -3,12 +3,15 @@ import { Link, useNavigate } from 'react-router-dom'
 import styles from './Navbar.module.css'
 import './Navbar.module.css'
 import Avatar from '../../components/profile/Avatar'
+import { getLocalStorage } from '../../utils/localStorage'
 
 const Navbar = ({ onHover, isHover }) => {
     const navigate = useNavigate()
     const getLogin = () => {
         navigate("/login")
     }
+    const username = getLocalStorage("username")
+
     return (
         <nav className={styles.menu} onMouseEnter={() => onHover(true)}
             onMouseLeave={() => onHover(false)}>
@@ -53,8 +56,12 @@ const Navbar = ({ onHover, isHover }) => {
                     <li></li>
                 </ul>
             </div>
-            <button className={styles.loginBtn} onClick={getLogin}><i className="fa-solid fa-right-to-bracket"></i>{isHover ? "Daxil ol" : ""}</button>
-            {/* <Avatar /> */}
+            <div className={styles.profileContainer}>
+                {
+                    username ? <Avatar username={username.username} isHover={isHover}/>
+                        : <button className={styles.loginBtn} onClick={getLogin}><i className="fa-solid fa-right-to-bracket"></i>{isHover ? "Daxil ol" : ""}</button>
+                }
+            </div>
         </nav>
     )
 }

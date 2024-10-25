@@ -24,10 +24,10 @@ const LoginPage = () => {
     return (
         <div className="common-area center">
             <div className={`black-area area ${!isSigningIn && triggerAnimation ? 'animate-signup' : ''}`}>
-                <SignUp funcSignIn={signIn}/>
+                <SignIn funcSignIn={signIn}/>
             </div>
             <div className={`white-area area ${isSigningIn && triggerAnimation ? 'animate-signin' : ''}`}>
-                <SignIn funcSignUp={signUp}/>
+                <SignUp funcSignUp={signUp}/>
             </div>
         </div>
     )
