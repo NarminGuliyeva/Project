@@ -7,17 +7,6 @@
     z-index: 50 !important;
     transition: 1s;
 }
-.logo {
-    width: 100%;
-    height: 120px;
-    transition: all 0.3s ease-in-out;
-    overflow: hidden;
-    white-space: nowrap;
-    padding: 50px 30px;
-}
-.logo h1 {
-    font-size: 40px;
-}
 nav:hover {
     width: 20%;
 }
@@ -25,6 +14,7 @@ nav:hover {
     display: none;
 }
 .menu:hover .blackKeysOpened{
+    width: 100%;
     display: block;
 }
 /* nav:hover + .common{
@@ -36,17 +26,19 @@ nav:hover .white{
 }
 .pianoMenuHover {
     width: 100%;
-    height: 64vh;
-    margin-top: 4vh;
+    height: 100vh;
+    /* margin-top: 4vh; */
     position: relative;
 }
 .pianoMenuHover .white {
     width: 100%;
+    height: 100%;
     display: none;
 }
-.pianoMenuHover .white li {
+.pianoMenuHover .whiteLi {
     width: 100%;
-    height: 84px;
+    height: 10%;
+    /* height: 84px; */
     border: 1px solid black;
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
@@ -54,30 +46,70 @@ nav:hover .white{
 }
 .blackKeys {
     width: 72%;
+    height: 100%;
+    /* position: relative; */
+    /* background-color: rgba(255, 0, 0, 0.052); */
     position: absolute;
-    top: 52px;
+    /* top: 5%; */
+    /* top: 52px; */
     /* top: 172px; */
 }
-.blackKeys-opened{
-    display: none;
+.black {
+    width: 70%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    cursor: pointer;
 }
-.blackKeys .doMi{
-    /* margin: 106px 0px 0px; */
-    margin: 100px 0px 0px;
+.doMi2 {
+    top: 10%;
+    cursor:none;
+    cursor: text;
+}
+.faSi1 {
+    top: 30%;
+}
+.faSi2 {
+    top: 40%;
+}
+.faSi3 {
+    top: 50%;
+}
+.doMi3 {
+    top: 70%;
+}
+.doMi4 {
+    top: 80%;
+}
+.blackKeysClosed .doMi2 .profileContainer{
+    padding-left: 10px;
 }
 .blackKeys li{
     width: 100%;
-    height: 63px;
+    height: 60px;
+    /* height: 63px; */
     background-color: black;
-    margin-bottom: 23px;
+    /* margin-bottom: 23px; */
     font-size: 20px;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
-    text-align: center;
+    /* text-align: center; */
     display: flex;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.blackKeysClosed .black li{
+    padding-left: 0;
+    /* padding-left: 20px; */
+    justify-content: center;
+}
+.blackKeysOpened .black li{
+    padding-left: 20px;
+    justify-content: left;
 }
 
 .blackKeys li i{
@@ -97,27 +129,50 @@ nav:hover .white{
     color: white;
     /* font-family: 'Dancing Script', cursive; */
 }
-.black5 div{
+.logo {
+    /* width: 100%; */
+    /* height: 120px; */
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    white-space: nowrap;
+    /* padding: 50px 30px; */
+    color: white;
+}
+.logo h1 {
+    font-size: 30px;
+}
+.basketLi{
     position: relative;
 }
-.countCart {
-    width: 20px;
-    height: 20px;
-    font-size: 15px;
+.count {
+    width: 18px;
+    height: 18px;
     position: absolute;
-    top: -30%;
-    left: 65%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: -60%;
+    right: 0;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
     border-radius: 50%;
     background-color: white;
+}
+.countCart {
+    font-size: 14px;
+    /* top: -30%;
+    left: 65%; */
     color: black;
 }
 .profileContainer {
-    position: absolute;
-    bottom: 10px;
-    width: 60%;
-    left: 45%;
-    transform: translateX(-50%);
-    height: 40px;
+    width: 100%;
+    /* position: absolute; */
+    /* bottom: 10px; */
+    /* width: 60%; */
+    /* left: 45%; */
+    /* transform: translateX(-50%); */
+    /* height: 40px; */
 }
 .loginBtn {
     /* width: 100px; */

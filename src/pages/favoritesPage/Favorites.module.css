@@ -1,3 +1,25 @@
 .favoritesPage {
     padding: 40px 0;
 }
+.productsContent {
+    width: 90%;
+    margin: auto;
+    position: relative;
+    border: 1px solid rgba(128, 128, 128, 0.116);
+    padding-bottom: 140px;
+}
+.productsContent h1 {
+    padding: 20px 30px;
+}
+.productsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content:space-between;
+    justify-items: self-start;
+}
+.productsContent p {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 25px;
+}

@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { getLocalStorage, saveLocalStorage } from "../utils/localStorage";
 
 const productsSlice = createSlice({
-    name : "products",
+    name: "products",
     initialState: {
         products: [],
         favProducts: [],
@@ -21,7 +21,7 @@ const productsSlice = createSlice({
             state.favProducts = action.payload;
         },
         addFavProduct: (state, action) => {
-            state.favProducts =  [...state.favProducts, action.payload];
+            state.favProducts = [...state.favProducts, action.payload];
         },
         removeFavProduct: (state, action) => {
             state.favProducts = state.favProducts.filter(product => product.id !== action.payload.id);
@@ -33,21 +33,30 @@ const productsSlice = createSlice({
             state.basket = action.payload;
         },
         addBasketProduct: (state, action) => {
-            state.basket =  [...state.basket, action.payload];
+            state.basket = [...state.basket, action.payload];
         },
         removeBasketProduct: (state, action) => {
             state.basket = state.basket.filter(product => product.id !== action.payload.id);
+        },
+        updateBasketCount: (state, action) => {
+            const { id, newCount } = action.payload;
+            state.basket = state.basket.map(product =>
+                product.id === id
+                    ? { ...product, count: newCount }
+                    : product
+            );
         },
         resetAllBasket: (state, action) => {
             state.basket = [];
         }
     }
 })
-export const {addProductsData, 
-    setChooseCategory, addFavProduct,  
+export const { addProductsData,
+    setChooseCategory, addFavProduct,
     removeFavProduct, setFavProducts,
-    resetAllFav, addBasketProduct,  
+    resetAllFav, addBasketProduct,
     removeBasketProduct, setBasketProducts,
+    updateBasketCount,
     resetAllBasket
 } = productsSlice.actions;
 

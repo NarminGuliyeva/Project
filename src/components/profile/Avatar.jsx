@@ -15,15 +15,17 @@ const Avatar = ({ username, isHover }) => {
     <div className={styles.avatar}>
       <div className={styles.userIcon}>
         <p>{text}</p>
-      {/* <i className="fa-regular fa-user"></i> */}
+        {/* <i className="fa-regular fa-user"></i> */}
       </div>
       {
         isHover && (
-          <p>{username}</p>
+          <div className={styles.userNameContainer}>
+            <p>{username}</p>
+            <div onClick={signOut} className={styles.signOutBtn}><i className="fa-solid fa-right-from-bracket"></i></div>
+          </div>
         )
       }
-      <div onClick={signOut} className={styles.signOutBtn}><i className="fa-solid fa-right-from-bracket"></i></div>
-      
+
     </div>
   )
 }

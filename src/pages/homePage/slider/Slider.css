@@ -14,30 +14,39 @@
 .textSlider {
     width: 40%;
     margin-right: 5%;
-    height: 700px;
+    height: 600px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     padding-top: 150px;
+    margin-top: 100px;
     /* background-color: bisque; */
 }
-.textSlider p {
-    line-height: 50px;
-    font-size: 30px;
+.txtSlide h2 {
+    font-size: 54px;
+    font-weight: 500;
+    line-height: 1.25;
+}
+.txtSlide p {
+    line-height: 1.25;
+    font-size: 26px;
+    margin-top: 40px;
 }
 .part2 {
     width: 50%;
     position: absolute;
-    height: 700px;
+    /* height: 600px; */
     /* background-color: blueviolet; */
     top: 50%;
     display: flex;
     align-items: center;
     padding-left: 100px;
+    padding-top: 150px;
 }
-.part2 p {
+/* .part2 p {
     line-height: 40px;
     font-size: 30px;
-}
+} */
 .ThreeDModel {
     width: 50%;
     height: 100%;
@@ -63,8 +72,6 @@ canvas.myCanvas {
     width: 50%;
     /* background-color: green; */
 }
-/* .myCanvas {
-    width: 80vw;
-    height: max-content;
-    background-color: red;
-} */
+.txtSlide .btnMain {
+    margin: 50px 0;
+}

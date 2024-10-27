@@ -7,11 +7,11 @@
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content:space-between;
+    justify-items: self-start;
     /* justify-items: flex-start; */
     /* justify-items: first baseline; */
-    justify-items: self-start;
-    border: 1px solid rgba(128, 128, 128, 0.116);
     /* box-shadow: rgba(17, 17, 26, 0.186) 0px 1px 0px, rgba(17, 17, 26, 0.225) 0px 0px 8px; */
+    border: 1px solid rgba(128, 128, 128, 0.116);
     padding-bottom: 140px;
 }
 .cart .products-content {
@@ -41,6 +41,7 @@
     /* background-color: red; */
     object-fit: contain;
     margin-top: 5%;
+    margin: auto;
     /* text-align: center; */
     /* margin-left: 10%; */
     /* margin-left: 5%; */

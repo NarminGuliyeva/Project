@@ -1,10 +1,11 @@
 .avatar {
-    width: 100%;
+    /* width: 100%; */
     /* width: 150px; */
     /* height: 40px; */
     /* background-color: red; */
     display: flex;
     align-items: center;
+    color: white;
 }
 .userIcon {
     width: 36px;
@@ -13,17 +14,26 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-left: 8px;
-    padding-top: 2px;
+    /* padding-left: 8px; */
+    /* padding-top: 2px; */
     text-align: center;
     font-size: 20px;
     border-radius: 50%;
-    border: 1px solid black;
-    margin-right: 10px;
+    border: 1px solid white;
+    /* margin: auto; */
+    /* margin-right: 10px; */
+}
+.userNameContainer {
+    width: calc(100% - 60px);
+    margin-left: 5px;
+    /* background-color: yellow; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 .avatar p {
-    font-size: 20px;
-    margin-right: 10px;
+    font-size: 18px;
+    /* margin-right: 10px; */
 }
 .signOutBtn {
     font-size: 20px;

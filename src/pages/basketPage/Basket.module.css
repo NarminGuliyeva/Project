@@ -1,3 +1,234 @@
 .basketPage {
     padding: 40px 0;
 }
+.productsContent {
+    width: 90%;
+    margin: auto;
+    /* margin-top: 40px; */
+    position: relative;
+    border: 1px solid rgba(128, 128, 128, 0.116);
+    /* padding: 30px; */
+    padding-bottom: 140px;
+}
+.productsContent h1 {
+    padding: 20px 30px;
+}
+.basketContainer {
+    display: flex;
+    padding-top: 30px;
+    justify-content: space-between;
+}
+.totalPriceContainer {
+    width: 22%;
+    height: 120px;
+    /* background-color: red; */
+    text-align: right;
+    padding-right: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    justify-content: right;
+    justify-content: end;
+}
+.totalPriceContainer p{
+    width: 100%;
+    text-align: right;
+    display: flex;
+    justify-content: end;
+    margin-bottom: 30px;
+}
+.totalPriceContainer .btnMain {
+    height: 30px;
+}
+.productsContainer {
+    /* position: relative; */
+    width: 75%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content:space-between;
+    justify-items: self-start;
+}
+.hrBasket {
+    width: 100%;
+    margin-top: 10px;
+}
+.product {
+    width: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+}
+.product div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imgBasketProduct {
+    /* background-color: red; */
+    min-width: 160px;
+}
+.product img{
+    width: 160px;
+    height: 160px;
+    padding: 20px;
+    object-fit: contain;
+    /* margin-top: 5%; */
+    margin: auto;
+}
+.nameContainer {
+    width: 28%;
+    /* overflow: hidden; */
+    /* background-color: yellow; */
+}
+.nameContainer h1 {
+    font-size: 24px;
+    font-weight: 500;
+}
+.catContainer {
+    width: 18%;
+    /* background-color: aqua; */
+}
+.catContainer h1 {
+    font-size: 20px;
+    font-weight: 400;
+}
+.basketCounter {
+    width: 150px;
+    /* background-color: red; */
+}
+.counterButton {
+    background-color: #000;
+    border: none;
+    color: white;
+    font-size: 1.2em;
+    font-weight: bold;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+  }
+  .counterDisplay {
+    margin: 0 10px;
+    font-size: 1.4em;
+    color: #333;
+    width: 30px;
+    text-align: center;
+}  
+.priceContainer {
+    width: 18%;
+    padding: 0 5px;
+}
+.priceContainer h1 {
+    font-size: 26px;
+    font-weight: 400;
+}
+.btnDeleteContainer {
+    width: 50px;
+    /* background-color: #333;  */
+}
+.btnDelete {
+    border: none;
+    background-color: none;
+    font-size: 22px;
+}
+.productsContent p {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 25px;
+}
+
+
+
+
+
+.product .products-buttons {
+    width: 66%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    top: 55%;
+    z-index: 45;
+    overflow: hidden;
+}
+.btn-product{
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 0.1cm;
+    border: none;
+    font-size: 20px;
+    position: absolute;
+    top: 20%;
+    z-index: 10;
+    color: black;
+}
+.more {
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.797);
+    color: white;
+    width: 80px !important;
+    position: static !important;
+    /* margin-left: 66%; */
+}
+.products-buttons a{
+    color: white !important;
+}
+.more a {
+    color: white;
+}
+.add-favorite{
+    position: absolute;
+    left: -30%; 
+    top: 3%;
+}
+.add-basket{
+    position: absolute;
+    right: -30%;
+    top: 3%;
+}
+
+.product:hover .add-basket{
+    animation-name: buttons2;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.product:hover .add-favorite{
+    animation-name: buttons1;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+.product-hover{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.product:hover{
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    /* border: 1px solid red; */
+    /* background-color: red; */
+    /* box-shadow: rgba(142, 142, 180, 0.186) 0px 1px 0px, rgba(49, 49, 172, 0.225) 0px 0px 8px; */
+    /* background-color: rgba(180, 180, 180, 0.404); */
+    transition: .5s;
+}
+.product:hover .name-price h1{
+    /* color: white; */
+    transition: .5s;
+}
+
+.name-price {
+    /* width: 100%; */
+    margin: 10px auto;
+    height: 30%;
+    /* margin-top: 20%; */
+    /* top: 30px; */
+    /* background-color: red !important; */
+    /* border: 1px solid red; */
+    padding: 0px 20px;
+    text-align: left;
+    /* text-align: center; */
+}
+

@@ -16,7 +16,7 @@ const Slider = () => {
             scrollTrigger: {
                 trigger: ".textSlider",
                 start: 'top 10%', // Daha yukarıdan başlat
-                end: 'bottom 10%',
+                end: 'bottom 20%',
                 scrub: true,
                 pin: false, // İsterseniz sabitleyebilirsiniz
                 // markers: true, // Kontrol için markerlar açabilirsiniz
@@ -33,7 +33,7 @@ const Slider = () => {
         const tl2 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".part2",
-                start: 'top 75%', // Ekranın ortalarına doğru başlayabilir
+                start: 'top 75%',
                 end: 'bottom 100%',
                 scrub: true,
                 pin: false,
@@ -62,11 +62,14 @@ const Slider = () => {
                     {/* <TwoDModel/> */}
                     <ThreeDModel />
                 </div>
-                <div className='textSlider' ref={textRef}>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod aliquid corrupti vel architecto nobis expedita, facilis quis doloremque impedit! Praesentium voluptate officiis iure asperiores, et omnis facilis mollitia nesciunt atque quos odit excepturi ipsa magnam odio provident animi necessitatibus sed, maiores voluptatum doloremque libero eum dolorum eveniet expedita. Voluptatem vitae quos accusamus est iste eaque quibusdam autem adipisci aliquid dolor?</p>
+                <div className='textSlider txtSlide' ref={textRef}>
+                    <h2>Musiqiyə olan həvəsinizə doğru ilk addımı atın!</h2>
+                    <p><b>"İstər Başlanğıc, istərsə də Peşəkar..."</b>     Musiqiyə olan həvəsinizi peşəkar səviyyəyə qaldıracaq keyfiyyətli gitaralarla hobbi və ya peşəkar səviyyədə musiqi çalmağa başlamaq indi çox asandır.</p>
                 </div>
-                <div className='d-flex part2'>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod aliquid corrupti vel architecto nobis expedita, facilis quis doloremque impedit! Praesentium voluptate officiis iure asperiores, et omnis facilis mollitia nesciunt atque quos odit excepturi ipsa magnam odio provident animi necessitatibus sed, maiores voluptatum doloremque libero eum dolorum eveniet expedita. Voluptatem vitae quos accusamus est iste eaque quibusdam autem adipisci aliquid dolor?</p>
+                <div className='d-flex part2 txtSlide'>
+                    <h2>"Keyfiyyətli gitara və alətlərlə sənətə toxunun."</h2>
+                    <p>Geniş məhsul çeşidimizdə hər büdcəyə uyğun keyfiyyətli gitara, aksesuarlar və digər musiqi alətləri sizi gözləyir.</p>
+                    <button className='btnMain'>Kolleksiyaya Bax</button>
                 </div>
             </div>
             <div>

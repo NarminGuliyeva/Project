@@ -132,17 +132,16 @@ const Product = ({ product }) => {
         handleGetFavProducts(),
             handleGetBasketProducts()
     }, [])
+    console.log(product.img);
+    
+    
     return (
         <div className="product">
             {/* <div className="product-hover"> </div> */}
             <button className="btn-product add-favorite" onClick={() => handleAddFav(product)}><i className={`fa-${isFavorited(product.id) ? "solid" : "regular"} fa-heart`}></i></button>
             <button className="btn-product add-basket" onClick={() => handleAddBasket(product)}><i className="fa-solid fa-basket-shopping"></i></button>
-            <img src={product.img} alt="" />
-            {/* <div className="products-buttons center"> */}
+            <img src={`http://localhost:5173/${product.img}`} alt="" />
 
-            {/* <button className="btn-product add-favorite" onClick={() => dispatch(toggleFavorites(product))}><i className={`${isFavorite ? 'fa-solid' : 'fa-regular'} fa-heart`}></i></button> */}
-            {/* <button className="btn-product add-basket" onClick={() => dispatch(addtoCart(product))}><i className="fa-solid fa-basket-shopping"></i></button> */}
-            {/* </div> */}
             <div className="name-price">
                 <div className='nameContainer'>
                     <h1 className="product-name">{product.name}</h1>
@@ -151,7 +150,7 @@ const Product = ({ product }) => {
                     <div className='priceContain'>
                         <h1 className="product-price">Qiymet: {product.price}$</h1>
                     </div>
-                    <button className="btn-product more"><Link to={`/product/${product.id}`}>Ətraflı</Link></button>
+                    <button className="btnMain more"><Link to={`/product/${product.id}`}>Ətraflı</Link></button>
                 </div>
             </div>
         </div>

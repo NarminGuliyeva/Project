@@ -37,12 +37,16 @@ const FavoritesPage = () => {
 
   return (
     <div className={styles.favoritesPage}>
-      <div className="products-content">
-        {
-          favProducts.map(item => {
-            return <Product product={item.product} key={item.product.id} />
-          })
-        }
+      <div className={styles.productsContent}>
+      <h1>Favorilər</h1>
+        {favProducts.length === 0 && <p>Favorilərdə məhsul yoxdur</p>}
+        <div className={styles.productsContainer}>
+          {
+            favProducts.map(item => {
+              return <Product product={item.product} key={item.product.id} />
+            })
+          }
+        </div>
       </div>
     </div>
   )
