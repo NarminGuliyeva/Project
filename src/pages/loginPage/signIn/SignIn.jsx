@@ -49,8 +49,15 @@ const SignIn = ({ funcSignIn }) => {
                     {
                         signInInp.map(inp => (
                             <div className="form-group">
-                                <input type={inp.inpType} className={`inp inp-${inp.inpType}`} {...register((inp.inpName), { required: true })} />
-                                <label for="" className={`label label-${inp.inpType}`}>{inp.inpLabel}</label>
+                                <input type={inp.inpType} className={`inp inp-${inp.inpType}`} {...register((inp.inpName), { required: true })}
+                                onFocus={e => e.target.classList.add('focused')}
+                                onBlur={e => {
+                                    if (!e.target.value) {
+                                        e.target.classList.remove('focused');
+                                    }
+                                }}
+                                 />
+                                <label className={`label label-${inp.inpType} ${watch(inp.inpName) ? 'active' : ''}`}>{inp.inpLabel}</label>
                                 {errors[inp.inpName] && <span>This field is required</span>}
                             </div>
                         ))

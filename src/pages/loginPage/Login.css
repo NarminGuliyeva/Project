@@ -108,7 +108,8 @@
     letter-spacing: 3px;
     pointer-events: none;
 }
-.inp:focus~.label{
+.inp:focus~.label,
+.label.active {
     height: 23px;
     padding: 4px 10px;
     background-color: black;
@@ -124,7 +125,7 @@
 .section-signup .label {
     color: white;
 }
-.section-signup .inp:focus ~.label{
+.section-signup .inp:focus ~.label,.label.active {
     background-color: white;
     color: black;
 }
@@ -146,6 +147,7 @@
     /* margin-left: 30px; */
 }
 .txt-signup {
+    width: 60%;
     color: white;
 }
 .txt-signup button{

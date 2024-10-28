@@ -37,7 +37,7 @@ const Slider = () => {
                 end: 'bottom 100%',
                 scrub: true,
                 pin: false,
-                markers: true,
+                // markers: true,
             }
         });
 

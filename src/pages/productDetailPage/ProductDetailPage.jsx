@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import './ProductDetail.css'
 import ProductSlide from './ProductSlide';
+import { getLocalStorage } from '../../utils/localStorage';
+import { useDispatch, useSelector } from 'react-redux';
+import { addBasketProduct, addFavProduct, removeFavProduct } from '../../store/productsSlice';
 
 const ProductDetailPage = () => {
-    const [details, setDetails] = useState([]);
-
     const { id } = useParams();
-    console.log(id);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const [details, setDetails] = useState([]);
+    const username = getLocalStorage("username")
+    const favProducts = useSelector(state => state.products.favProducts);
+    const basket = useSelector(state => state.products.basket);
 
     useEffect(() => {
         const getProductDetail = async () => {
@@ -24,8 +30,119 @@ const ProductDetailPage = () => {
         getProductDetail()
     }, [])
 
-    console.log(details.img);
+    const handleAddBasket = async (product) => {
+        if (username) {
+            const chosenProduct = basket.find(b => b.product.id === product.id)
+            if (!chosenProduct) {
+                try {
+                    const response = await fetch('http://localhost:5000/basket', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ product, count: 1, userId: username.id })
+                    })
+                    const data = await response.json()
+                    console.log(data);
 
+                    dispatch(addBasketProduct(data))
+                }
+                catch (e) { console.error(e) }
+            }
+            else {
+                try {
+                    const updatedCount = chosenProduct.count + 1;
+                    const response = await fetch(`http://localhost:5000/basket/${chosenProduct.id}`, {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ 
+                            product: chosenProduct.product,
+                            count: updatedCount, 
+                            userId: chosenProduct.userId
+                        })
+                    });
+
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+        }
+        else {
+            navigate("/login")
+        }
+    }
+
+    const isFavorited = (productId) => {
+        return favProducts.some((fav) => fav.product.id === productId);
+    }
+    const handleAddFav = async (product) => {
+        if (username) {
+            const isAlreadyFavorited = isFavorited(product.id);
+            if (!isAlreadyFavorited) {
+                try {
+                    const response = await fetch('http://localhost:5000/favouritesProducts', {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({ product, userId: username.id })
+                    })
+                    const data = await response.json()
+                    dispatch(addFavProduct(data))
+                }
+                catch (e) { console.error(e) }
+            }
+            else {
+                const chosenProduct = favProducts.find(p => p.product.id === product.id)
+                try {
+                    const response = await fetch(`http://localhost:5000/favouritesProducts/${chosenProduct.id}`, {
+                        method: "DELETE"
+                    });
+                    if (response.ok) {
+                        dispatch(removeFavProduct(chosenProduct));
+                    }
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+        }
+        else {
+            navigate("/login")
+        }
+    }
+
+    const handleGetBasketProducts = async () => {
+        if (username) {
+            try {
+                const response = await fetch('http://localhost:5000/basket');
+                const data = await response.json();
+                const filteredData = data.filter((d) => d.userId === username.id)
+                dispatch(setBasketProducts(filteredData));
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    };
+
+    const handleGetFavProducts = async () => {
+        if (username) {
+            try {
+                const response = await fetch('http://localhost:5000/favouritesProducts');
+                const data = await response.json();
+                const filteredData = data.filter((d) => d.userId === username.id)
+                dispatch(setFavProducts(filteredData));
+            } catch (error) {
+                console.error(error);
+            }
+        }
+    };
+
+    useEffect(() => {
+        handleGetFavProducts(),
+        handleGetBasketProducts()
+    }, [])   
     return (
         <>
         <section className="section-more">
@@ -60,10 +177,8 @@ const ProductDetailPage = () => {
                 <p className="product-weight txt-product">Çəki: {details.weight} kq</p>
 
                 <div className="product-buttons">
-                    <button className="btnMain">Səbətə əlavə et</button>
-                    {/* <button className="btn-add-basket btn-add"><a href="">Səbətə əlavə et</a></button> */}
-                    <button className="btnMain"><i className="fa-regular fa-heart"></i></button>
-                    {/* <button className="btn-add-favorite btn-add"><a href=""><i className="fa-regular fa-heart"></i></a></button> */}
+                    <button className="btnMain" onClick={() => handleAddBasket(details)}>Səbətə əlavə et</button>
+                    <button className="btnMain" onClick={() => handleAddFav(details)}><i className={`fa-${isFavorited(details.id) ? "solid" : "regular"} fa-heart`}></i></button>
                 </div>
             </div>
 
