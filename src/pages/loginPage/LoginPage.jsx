@@ -4,8 +4,6 @@ import SignUp from './signUp/SignUp';
 import SignIn from './signIn/SignIn';
 
 const LoginPage = () => {
-    const whiteAreaRef = useRef(null);
-    const blackAreaRef = useRef(null);
     const [isSigningIn, setIsSigningIn] = useState(true);
     const [triggerAnimation, setTriggerAnimation] = useState(false);
 

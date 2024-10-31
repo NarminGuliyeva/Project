@@ -11,17 +11,15 @@ gsap.registerPlugin(ScrollTrigger);
 const Slider = () => {
     const textRef = useRef();
     useGSAP(() => {
-        // ScrollTrigger ile modeli sabit tut
         const tl1 = gsap.timeline({
             scrollTrigger: {
                 trigger: ".textSlider",
-                start: 'top 10%', // Daha yukarıdan başlat
+                start: 'top 10%',
                 end: 'bottom 20%',
                 scrub: true,
-                pin: false, // İsterseniz sabitleyebilirsiniz
-                // markers: true, // Kontrol için markerlar açabilirsiniz
+                pin: false,
                 onComplete: () => {
-                    tl2.play(); // İlk animasyon bittiğinde ikinci animasyonu başlat
+                    tl2.play();
                 }
             }
         });
@@ -37,7 +35,6 @@ const Slider = () => {
                 end: 'bottom 100%',
                 scrub: true,
                 pin: false,
-                // markers: true,
             }
         });
 
@@ -59,7 +56,6 @@ const Slider = () => {
         <section className='sliderContainer'>
             <div className='d-flex sliderTop'>
                 <div className='ThreeDModel'>
-                    {/* <TwoDModel/> */}
                     <ThreeDModel />
                 </div>
                 <div className='textSlider txtSlide' ref={textRef}>

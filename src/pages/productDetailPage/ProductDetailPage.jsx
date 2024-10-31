@@ -16,6 +16,7 @@ const ProductDetailPage = () => {
     const basket = useSelector(state => state.products.basket);
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         const getProductDetail = async () => {
             try {
                 const response = await fetch(`http://localhost:5000/products/${id}`);
@@ -57,9 +58,9 @@ const ProductDetailPage = () => {
                         headers: {
                             "Content-Type": "application/json",
                         },
-                        body: JSON.stringify({ 
+                        body: JSON.stringify({
                             product: chosenProduct.product,
-                            count: updatedCount, 
+                            count: updatedCount,
                             userId: chosenProduct.userId
                         })
                     });
@@ -141,49 +142,49 @@ const ProductDetailPage = () => {
 
     useEffect(() => {
         handleGetFavProducts(),
-        handleGetBasketProducts()
-    }, [])   
+            handleGetBasketProducts()
+    }, [])
     return (
         <>
-        <section className="section-more">
-            <div className="product-images">
-                
-                <div className="small-images">
-                    <div className="small-img-content">
-                        <img className="small-img" src={`http://localhost:5173/${details.img}`} alt="" />
-                    </div>
-                    <div className="small-img-content">
-                        <img className="small-img" src={`http://localhost:5173/${details.img}`} alt="" />
-                    </div>
-                    <div className="small-img-content">
-                        <img className="small-img" src={`http://localhost:5173/${details.img}`} alt="" />
-                    </div>
-                </div>
-                <div className="big-img-content">
-                    {/* <img className="big-img" src={`http://localhost:5174/${details.img}`} alt="" /> */}
-                    <img className="big-img" src={`http://localhost:5173/${details.img}`} alt="" />
-                </div>
-            </div>
-            <div className="product-details">
-                <h1 className="product-name">{details.name}</h1>
-                <h1 className="product-price ">Qiymet: {details.price}m</h1>
-                
-                <p className="about-product">Məhsul haqqında</p>
-                <p className="product-brend txt-product">Brend: {details.brand}</p>
-                <p className="product-type txt-product">Məhsulun növü: Royal</p>
-                <p className="product-count-key txt-product">Düymələrin sayı: 88</p>
-                <p className="product-size txt-product">Ölçülər: {details.size} (HxExD)</p>
-                <p className="product-country txt-product">İstehsal ölkəsi: {details.country}</p>
-                <p className="product-weight txt-product">Çəki: {details.weight} kq</p>
+            <section className="section-more">
+                <div className="product-images">
 
-                <div className="product-buttons">
-                    <button className="btnMain" onClick={() => handleAddBasket(details)}>Səbətə əlavə et</button>
-                    <button className="btnMain" onClick={() => handleAddFav(details)}><i className={`fa-${isFavorited(details.id) ? "solid" : "regular"} fa-heart`}></i></button>
+                    <div className="small-images">
+                        <div className="small-img-content">
+                            <img className="small-img" src={`http://localhost:5173/${details.img}`} alt="" />
+                        </div>
+                        <div className="small-img-content">
+                            <img className="small-img" src={`http://localhost:5173/${details.img}`} alt="" />
+                        </div>
+                        <div className="small-img-content">
+                            <img className="small-img" src={`http://localhost:5173/${details.img}`} alt="" />
+                        </div>
+                    </div>
+                    <div className="big-img-content">
+                        {/* <img className="big-img" src={`http://localhost:5174/${details.img}`} alt="" /> */}
+                        <img className="big-img" src={`http://localhost:5173/${details.img}`} alt="" />
+                    </div>
                 </div>
-            </div>
+                <div className="product-details">
+                    <h1 className="product-name">{details.name}</h1>
+                    <h1 className="product-price ">Qiymet: {details.price}m</h1>
 
-        </section>
-        <ProductSlide/>
+                    <p className="about-product">Məhsul haqqında</p>
+                    <p className="product-brend txt-product">Brend: {details.brand}</p>
+                    <p className="product-type txt-product">Məhsulun növü: Royal</p>
+                    <p className="product-count-key txt-product">Düymələrin sayı: 88</p>
+                    <p className="product-size txt-product">Ölçülər: {details.size} (HxExD)</p>
+                    <p className="product-country txt-product">İstehsal ölkəsi: {details.country}</p>
+                    <p className="product-weight txt-product">Çəki: {details.weight} kq</p>
+
+                    <div className="product-buttons">
+                        <button className="btnMain" onClick={() => handleAddBasket(details)}>Səbətə əlavə et</button>
+                        <button className="btnMain" onClick={() => handleAddFav(details)}><i className={`fa-${isFavorited(details.id) ? "solid" : "regular"} fa-heart`}></i></button>
+                    </div>
+                </div>
+
+            </section>
+            <ProductSlide />
         </>
     )
 }

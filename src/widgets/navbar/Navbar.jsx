@@ -7,10 +7,6 @@ import { getLocalStorage } from '../../utils/localStorage'
 import { useSelector } from 'react-redux'
 
 const Navbar = ({ onHover, isHover }) => {
-    const navigate = useNavigate()
-    const getLogin = () => {
-        navigate("/login")
-    }
     const basket = useSelector(state => state.products.basket);
     const username = getLocalStorage("username")
 
@@ -31,8 +27,7 @@ const Navbar = ({ onHover, isHover }) => {
                             <div className={styles.profileContainer}>
                                 {
                                     username ? <Avatar username={username.username} isHover={isHover} />
-                                        : <Link to=""><i className="fa-solid fa-right-to-bracket"></i>{isHover ? "Daxil ol" : ""}</Link>
-                                        // className={styles.loginBtn} onClick={getLogin}
+                                        : <Link to="/login"><i className="fa-solid fa-right-to-bracket"></i>{isHover ? "Daxil ol" : ""}</Link>
                                 }
                             </div>
                         </li>
@@ -62,7 +57,6 @@ const Navbar = ({ onHover, isHover }) => {
                 </div>
                 <ul className={styles.white}>
                     <li className={styles.whiteLi}></li>
-                    {/* <li></li> */}
                     <li className={styles.whiteLi}></li>
                     <li className={styles.whiteLi}></li>
                     <li className={styles.whiteLi}></li>

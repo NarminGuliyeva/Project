@@ -14,9 +14,9 @@ const BasketPage = () => {
   console.log(basket);
 
   const username = getLocalStorage("username")
-
-
+  
   useEffect(() => {
+    window.scrollTo(0, 0);
     if (username) {
       handleGetBasketProducts()
     }

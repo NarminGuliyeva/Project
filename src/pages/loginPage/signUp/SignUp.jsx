@@ -47,7 +47,6 @@ const SignUp = ({ funcSignUp }) => {
             });
             const result = await response.json();
             funcSignUp()
-            // console.log('Success:', result);
         }
         catch (e) { console.error(e) }
     }

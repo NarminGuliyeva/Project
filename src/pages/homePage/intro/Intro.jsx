@@ -3,19 +3,14 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import './Intro.css'
-// import styles from './Intro.module.css'
 import { instruments } from '../../../shared/constants/instruments'
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import IntroPhoto from './IntroPhoto';
-import { animateInstrument } from '../../../utils/instrumentsAnimation';
 
 const Intro = () => {
     console.log(instruments);
     const [text, setText] = useState(false);
     gsap.registerPlugin(useGSAP);
     gsap.registerPlugin(ScrollTrigger);
-
-    const imgKamancha = useRef(null)
 
     // useGSAP(() => {
     //     animateInstrument(".imgKamancha",
@@ -147,9 +142,7 @@ const Intro = () => {
     useEffect(() => {
         console.log(window.scrollY);
         const scrollMenu = () => {
-            // if (window.scrollY > 30) {
                 instruments.forEach(instrument => {
-                    // const element = document.querySelector(`.${styles[instrument.clsName]}`);
                     const element = document.querySelector(`.${instrument.clsName}`);
                     const word = document.querySelector(`.word`);
                     const wordText = document.querySelector(`.word h1`);                    
@@ -159,11 +152,6 @@ const Intro = () => {
                             setText(true)
                             word.style.animationName = "word";
                             wordText.style.animationName = "wordH1";
-                        // } else {
-                        //     element.style.animationName = `${instrument.clsName}-reverse`;
-                        //     setText(false)
-                        //     word.style.animationName = "";
-                        //     wordText.style.animationName = "";
                           }
                         }
                       });
@@ -175,10 +163,8 @@ const Intro = () => {
 
     return (
         <div className="sectionFirst">
-            {/* <div className={styles.sectionFirst}> */}
             <div className="word" >
                 <h1>{text && "“Musiqi – gözəl səslərə çevrilən düşüncədir”."}</h1>
-                {/* <h1>“Musiqi – gözəl səslərə çevrilən düşüncədir”.</h1> */}
             </div>
             {
                 instruments.map(instrument =>
@@ -191,4 +177,3 @@ const Intro = () => {
 }
 
 export default Intro
-{/* <IntroPhoto instrument={instrument} ref={instrument.clsName} /> */ }

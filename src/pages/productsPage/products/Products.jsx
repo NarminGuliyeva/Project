@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Product from './Product'
-// import { productsData } from '../../../shared/constants/products'
 import '../Product.css'
-import { useDispatch, useSelector } from 'react-redux'
-import { addProductsData } from '../../../store/productsSlice'
 
 const Products = ({...props}) => {
     const {filteredData} = props;   

@@ -10,18 +10,15 @@ const ProductPage = () => {
   const productsData = useSelector(state => state.products.products)
   const choosenId = useSelector(state => state.products.choosenCategory)
   
-
   useEffect(() => {
-      fetch("http://localhost:5000/products")
+    window.scrollTo(0, 0);
+    fetch("http://localhost:5000/products")
       .then(response => response.json())   
       .then(data => {
           dispatch(addProductsData(data))
           setFilteredData(data)
-          // setProducts(data)
       })
-      .catch(error => console.error(error));
-      // console.log(response);
-      
+      .catch(error => console.error(error));      
   }, [])
   
   useEffect(() => {

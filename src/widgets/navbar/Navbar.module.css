@@ -64,6 +64,9 @@ nav:hover .white{
     position: absolute;
     cursor: pointer;
 }
+.doMi1 .logo{
+    padding-left: 10px;
+}
 .doMi2 {
     top: 10%;
     cursor:none;

@@ -11,7 +11,6 @@ export const animateInstrument = (selector, startValues, endValues) => {
             trigger: ".imgKamancha",
             start: "top 10px",
             scrub: true,
-            // once: true
         }
     }).fromTo(selector,
         {
