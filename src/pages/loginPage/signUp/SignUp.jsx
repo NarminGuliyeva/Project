@@ -58,7 +58,7 @@ const SignUp = ({ funcSignUp }) => {
                     signUpInp.map(inp => (
                         <div className="form-group" key={inp.id}>
                             <input type={inp.inpType} className={`inp inp-${inp.inpType}`} {...register((inp.inpName), { required: true })} />
-                            <label for="" className={`label label-${inp.inpType}`}>{inp.inpLabel}</label>
+                            <label className={`label label-${inp.inpType} ${watch(inp.inpName) ? 'active' : ''}`}>{inp.inpLabel}</label>
                             {errors[inp.inpName] && <span>This field is required</span>}
                         </div>
                     ))

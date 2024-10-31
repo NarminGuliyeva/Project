@@ -102,12 +102,12 @@ nav:hover .white{
     /* justify-content: center; */
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
-.blackKeysClosed .black li{
+.blackKeysClosed .black li a{
     padding-left: 0;
     /* padding-left: 20px; */
     justify-content: center;
 }
-.blackKeysOpened .black li{
+.blackKeysOpened .black li a{
     padding-left: 20px;
     justify-content: left;
 }
@@ -126,6 +126,10 @@ nav:hover .white{
     margin-left: 4px;
 }
 .menu a{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
     color: white;
     /* font-family: 'Dancing Script', cursive; */
 }

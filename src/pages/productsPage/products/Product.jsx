@@ -7,20 +7,15 @@ import { getLocalStorage } from '../../../utils/localStorage'
 
 const Product = ({ product }) => {
     const dispatch = useDispatch();
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const username = getLocalStorage("username")
     const favProducts = useSelector(state => state.products.favProducts);
     const basket = useSelector(state => state.products.basket);
-    console.log(basket);
 
     const isFavorited = (productId) => {
         return favProducts.some((fav) => fav.product.id === productId);
     }
-    const isBasket = (productId) => {
-        return basket.some((b) => b.product.id === productId);
-    }
     const handleAddBasket = async (product) => {
-        debugger
         if (username) {
             const chosenProduct = basket.find(b => b.product.id === product.id)
             if (!chosenProduct) {
@@ -33,8 +28,6 @@ const Product = ({ product }) => {
                         body: JSON.stringify({ product, count: 1, userId: username.id })
                     })
                     const data = await response.json()
-                    console.log(data);
-
                     dispatch(addBasketProduct(data))
                 }
                 catch (e) { console.error(e) }
@@ -77,8 +70,6 @@ const Product = ({ product }) => {
                         body: JSON.stringify({ product, userId: username.id })
                     })
                     const data = await response.json()
-                    console.log(data);
-
                     dispatch(addFavProduct(data))
                 }
                 catch (e) { console.error(e) }
@@ -131,13 +122,10 @@ const Product = ({ product }) => {
     useEffect(() => {
         handleGetFavProducts(),
             handleGetBasketProducts()
-    }, [])
-    console.log(product.img);
-    
+    }, [])    
     
     return (
         <div className="product">
-            {/* <div className="product-hover"> </div> */}
             <button className="btn-product add-favorite" onClick={() => handleAddFav(product)}><i className={`fa-${isFavorited(product.id) ? "solid" : "regular"} fa-heart`}></i></button>
             <button className="btn-product add-basket" onClick={() => handleAddBasket(product)}><i className="fa-solid fa-basket-shopping"></i></button>
             <img src={`http://localhost:5173/${product.img}`} alt="" />
