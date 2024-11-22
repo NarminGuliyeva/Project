@@ -29,9 +29,30 @@
       "id": "e8b9",
       "username": "Narmin",
       "password": "narmin1"
+    },
+    {
+      "id": "cf60",
+      "username": "narmin",
+      "password": "narmin"
+    },
+    {
+      "id": "381b",
+      "username": "narmin",
+      "password": "narmin"
     }
   ],
   "products": [
+    {
+      "id": "10",
+      "name": "Upright piano P 125 G1",
+      "img": "src/assets/images/G1_1.png",
+      "price": 13000,
+      "catId": 1,
+      "brand": "Petrof",
+      "size": "1250 x 1463 x 590",
+      "weight": 239,
+      "country": "Çexiya"
+    },
     {
       "id": "1",
       "name": "Bosenderfer Special Edition Baroque",
@@ -94,17 +115,6 @@
       "img": "src/assets/images/instrumentsImg/saxophone.png",
       "price": 1000,
       "catId": 9
-    },
-    {
-      "id": "10",
-      "name": "Upright piano P 125 G1",
-      "img": "src/assets/images/G1_1.png",
-      "price": 13000,
-      "catId": 1,
-      "brand": "Petrof",
-      "size": "1250 x 1463 x 590",
-      "weight": 239,
-      "country": "Çexiya"
     }
   ],
   "favouritesProducts": [
@@ -272,6 +282,34 @@
       "count": 3,
       "userId": "02a0",
       "id": "9aa4"
+    },
+    {
+      "product": {
+        "id": "3",
+        "name": "'Bosenderfer Special Edition Baroque'",
+        "img": "src/assets/images/instrumentsImg/drum.png",
+        "price": 10000,
+        "catId": 11
+      },
+      "count": 5,
+      "userId": "cf60",
+      "id": "52b5"
+    },
+    {
+      "product": {
+        "id": "10",
+        "name": "Upright piano P 125 G1",
+        "img": "src/assets/images/G1_1.png",
+        "price": 13000,
+        "catId": 1,
+        "brand": "Petrof",
+        "size": "1250 x 1463 x 590",
+        "weight": 239,
+        "country": "Çexiya"
+      },
+      "count": 5,
+      "userId": "cf60",
+      "id": "11f4"
     }
   ]
 }

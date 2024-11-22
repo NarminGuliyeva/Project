@@ -66,7 +66,7 @@ const SignUp = ({ funcSignUp }) => {
             </form>
             <div className="txt-sign txt-signup center">
                 <p>Already have an account?</p>
-                <div onClick={funcSignUp}>Sign in</div>
+                <div onClick={funcSignUp} style={{cursor: "pointer"}}>Sign in</div>
             </div>
         </section>
     )
